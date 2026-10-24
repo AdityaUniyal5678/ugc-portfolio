@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Adi — UGC & Brand Storytelling</title>
+    <meta
+      name="description"
+      content="Aditya Uniyal creates perspective-driven videos for brands. Explore UGC, product storytelling and creator-led campaigns."
+    />
+    <style>
+      :root {
+        --paper: #f5f2eb;
+        --ink: #20221e;
+        --orange: #fe6338;
+        --line: #d7d7cd;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 23px 5%;
+        border-bottom: 1px solid var(--line);
+      }
+      .logo {
+        font-size: 27px;
+        font-weight: 900;
+        letter-spacing: -2px;
+      }
+      .logo span {
+        color: var(--orange);
+      }
+      nav .links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 13px;
+      }
+      .contact {
+        background: var(--ink);
+        color: white;
+        padding: 13px 20px;
+        border-radius: 30px;
+      }
+      .hero {
+        padding: 64px 5% 48px;
+        position: relative;
+      }
+      .eyebrow {
+        font-family: monospace;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 11px;
+      }
+      .dot {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--orange);
+        margin-right: 8px;
+      }
+      h1 {
+        font-size: clamp(62px, 8.9vw, 132px);
+        line-height: 0.94;
+        letter-spacing: -0.075em;
+        max-width: 1100px;
+        margin: 35px 0;
+      }
+      h1 em {
+        font-family: Georgia, serif;
+        font-weight: normal;
+        color: var(--orange);
+        letter-spacing: -0.065em;
+      }
+      .hero-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 30px;
+      }
+      .intro {
+        max-width: 425px;
+        line-height: 1.6;
+        font-size: 16px;
+      }
+      .round-link {
+        border: 1px solid var(--ink);
+        border-radius: 40px;
+        padding: 18px 25px;
+        display: inline-flex;
+        gap: 40px;
+        align-items: center;
+        font-size: 14px;
+      }
+      .brandline {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 24px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+      .brandline small {
+        font-family: monospace;
+        font-size: 10px;
+        letter-spacing: 1px;
+        max-width: 100px;
+        line-height: 1.5;
+      }
+      .brand {
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: -0.8px;
+      }
+      .section {
+        padding: 70px 5%;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 25px;
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: clamp(34px, 4.6vw, 64px);
+        letter-spacing: -0.055em;
+        line-height: 1.05;
+        margin: 15px 0 0;
+      }
+      .section-head p {
+        max-width: 300px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #65665e;
+      }
+      .filters {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-bottom: 26px;
+      }
+      .filter {
+        border: 1px solid var(--line);
+        background: transparent;
+        border-radius: 25px;
+        padding: 10px 18px;
+        font-size: 12px;
+      }
+      .filter.active {
+        background: var(--ink);
+        color: white;
+        border-color: var(--ink);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .frame {
+        aspect-ratio: 9/13;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #d7dbd0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 24px;
+      }
+      .frame.b {
+        background: #e9b8a0;
+      }
+      .frame.c {
+        background: #cec9e0;
+      }
+      .pill {
+        align-self: start;
+        font-size: 10px;
+        letter-spacing: 1px;
+        background: #ffffffaa;
+        padding: 8px 10px;
+        border-radius: 20px;
+      }
+      .poster-type {
+        font-size: clamp(30px, 3.6vw, 55px);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -2px;
+        z-index: 1;
+        max-width: 260px;
+      }
+      .poster-type em {
+        font-family: Georgia, serif;
+        font-weight: normal;
+      }
+      .abstract {
+        position: absolute;
+        width: 210px;
+        height: 210px;
+        border: 1px solid #20221e33;
+        border-radius: 50%;
+        top: 32%;
+        right: -40px;
+        box-shadow:
+          0 0 0 25px #ffffff15,
+          0 0 0 50px #ffffff15,
+          0 0 0 75px #ffffff15;
+      }
+      .placeholder {
+        z-index: 1;
+        font-family: monospace;
+        font-size: 10px;
+        letter-spacing: 1px;
+        background: #ffffffb0;
+        padding: 10px;
+        border-radius: 5px;
+        align-self: start;
+      }
+      .work-title {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin: 18px 0 6px;
+        font-size: 17px;
+        font-weight: 700;
+      }
+      .work-desc {
+        font-size: 12px;
+        color: #64675f;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .note {
+        font-family: monospace;
+        font-size: 11px;
+        line-height: 1.6;
+        color: #777970;
+        margin-top: 25px;
+      }
+      .about {
+        background: var(--ink);
+        color: var(--paper);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+      }
+      .about h2 {
+        max-width: 490px;
+      }
+      .about p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #d1d2c9;
+      }
+      .text-link {
+        display: inline-block;
+        border-bottom: 1px solid #888;
+        margin-top: 15px;
+        padding-bottom: 8px;
+        font-size: 13px;
+      }
+      .services {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 60px;
+        margin-top: 40px;
+      }
+      .service {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+      .service small {
+        font-family: monospace;
+        color: #7c7d74;
+      }
+      .service h3 {
+        font-size: 23px;
+        letter-spacing: -0.8px;
+        margin: 18px 0 10px;
+      }
+      .service p {
+        max-width: 410px;
+        font-size: 14px;
+        line-height: 1.65;
+        color: #65665e;
+      }
+      .process {
+        display: flex;
+        gap: 35px;
+        border-top: 1px solid var(--line);
+        margin-top: 45px;
+        padding-top: 25px;
+        font-family: monospace;
+        font-size: 12px;
+      }
+      .footer {
+        background: var(--orange);
+        padding: 65px 5% 24px;
+      }
+      .footer h2 {
+        font-size: clamp(50px, 8vw, 110px);
+        max-width: 900px;
+        margin-bottom: 30px;
+      }
+      .footer .round-link {
+        background: var(--ink);
+        color: white;
+      }
+      .foot-bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid #20221e44;
+        margin-top: 70px;
+        padding-top: 20px;
+        font-family: monospace;
+        font-size: 10px;
+      }
+      .hidden {
+        display: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid #4676cb;
+        outline-offset: 5px;
+      }
+      @media (max-width: 700px) {
+        nav {
+          padding: 20px 6%;
+        }
+        nav .links {
+          gap: 18px;
+        }
+        nav .links > a:first-child {
+          display: none;
+        }
+        .hero {
+          padding: 42px 6%;
+        }
+        .hero-bottom {
+          align-items: start;
+          flex-direction: column;
+        }
+        h1 {
+          font-size: 64px;
+          margin-top: 27px;
+        }
+        .brandline {
+          padding: 22px 6%;
+          gap: 20px;
+        }
+        .brand {
+          font-size: 17px;
+        }
+        .section {
+          padding: 45px 6%;
+        }
+        .section-head {
+          align-items: start;
+          flex-direction: column;
+          gap: 5px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .frame {
+          aspect-ratio: 9/11;
+        }
+        .poster-type {
+          font-size: 55px;
+        }
+        .about {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .services {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .process {
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        .footer {
+          padding: 45px 6% 25px;
+        }
+        .foot-bottom {
+          margin-top: 45px;
+          flex-wrap: wrap;
+        }
+        .intro {
+          font-size: 15px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      .reel-embed {
+        height: 590px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .reel-embed iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .reel-label {
+        font-family: monospace;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 1px;
+        color: #686a60;
+      }
+      .reel-link {
+        display: inline-block;
+        margin-top: 15px;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 5px;
+        font-size: 13px;
+      }
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px 24px;
+        max-width: 1000px;
+      }
+      @media (max-width: 700px) {
+        .grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .reel-embed {
+          height: 600px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="logo" href="#" aria-label="Adi home">adi<span>.</span></a>
+      <div class="links">
+        <a href="#work">Selected work</a><a href="#about">About</a
+        ><a class="contact" href="#contact">Let's talk ↗</a>
+      </div>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="dot"></span>Aditya Uniyal · UGC creator · India
+        </div>
+        <h1>Good stories.<br /><em>Real attention.</em></h1>
+        <div class="hero-bottom">
+          <p class="intro">
+            I’m Adi. I turn everyday observations into videos people want to
+            watch. And help brands become part of the conversation.
+          </p>
+          <a class="round-link" href="#work">Explore my work <span>↓</span></a>
+        </div>
+      </section>
+      <div class="brandline">
+        <small>BRAND CAMPAIGN EXPERIENCE</small
+        ><span class="brand">Truecaller</span><span class="brand">Audible</span
+        ><span class="brand">NETFLIX</span><span class="brand">JioHotstar</span>
+      </div>
+      <section id="work" class="section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">01 / The work</div>
+            <h2>Made to feel native.</h2>
+          </div>
+          <p>
+            Talking-head storytelling. Relatable observations. A brand message
+            that fits the story.
+          </p>
+        </div>
+        <div class="filters" aria-label="Filter portfolio">
+          <button class="filter active" data-filter="all" aria-pressed="true">
+            All work</button
+          ><button class="filter" data-filter="story" aria-pressed="false">
+            Brand campaigns</button
+          ><button class="filter" data-filter="organic" aria-pressed="false">
+            Organic content</button
+          ><button class="filter" data-filter="series" aria-pressed="false">
+            Original series
+          </button>
+        </div>
+        <div class="grid">
+          <article data-category="story">
+            <div class="reel-embed">
+              <iframe
+                src="https://www.instagram.com/reel/DewTjsRM6HD/embed/"
+                title="Truecaller Instagram reel"
+                loading="lazy"
+                allow="
+                  autoplay;
+                  encrypted-media;
+                  fullscreen;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="work-title">Truecaller</div>
+            <p class="reel-label">Brand campaign</p>
+            <p class="work-desc">
+              A familiar everyday dilemma, turned into a natural product story.
+            </p>
+            <a
+              class="reel-link"
+              href="https://www.instagram.com/reel/DewTjsRM6HD/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Watch on Instagram ↗</a
+            >
+          </article>
+          <article data-category="story">
+            <div class="reel-embed">
+              <iframe
+                src="https://www.instagram.com/reel/DdJl2tiOzqy/embed/"
+                title="Audible Instagram reel"
+                loading="lazy"
+                allow="
+                  autoplay;
+                  encrypted-media;
+                  fullscreen;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="work-title">Audible</div>
+            <p class="reel-label">Brand campaign</p>
+            <p class="work-desc">
+              Creator-led storytelling for an audio entertainment brand.
+            </p>
+            <a
+              class="reel-link"
+              href="https://www.instagram.com/reel/DdJl2tiOzqy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Watch on Instagram ↗</a
+            >
+          </article>
+          <article data-category="organic">
+            <div class="reel-embed">
+              <iframe
+                src="https://www.instagram.com/reel/Db3zYGISh9F/embed/"
+                title="Organic storytelling Instagram reel"
+                loading="lazy"
+                allow="
+                  autoplay;
+                  encrypted-media;
+                  fullscreen;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="work-title">Organic storytelling</div>
+            <p class="reel-label">Organic reel</p>
+            <p class="work-desc">
+              An example of my organic content and ability to create stories
+              that resonate beyond a brand brief.
+            </p>
+            <a
+              class="reel-link"
+              href="https://www.instagram.com/reel/Db3zYGISh9F/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Watch on Instagram ↗</a
+            >
+          </article>
+          <article data-category="series">
+            <div class="reel-embed">
+              <iframe
+                src="https://www.instagram.com/reel/DeWlo6IBRDF/embed/"
+                title="Culturemaxxing Instagram reel"
+                loading="lazy"
+                allow="
+                  autoplay;
+                  encrypted-media;
+                  fullscreen;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="work-title">Culturemaxxing</div>
+            <p class="reel-label">Original series</p>
+            <p class="work-desc">
+              My original series: curiosity-driven storytelling with a
+              repeatable identity.
+            </p>
+            <a
+              class="reel-link"
+              href="https://www.instagram.com/reel/DeWlo6IBRDF/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Watch on Instagram ↗</a
+            >
+          </article>
+        </div>
+        <p class="note">
+          If an embedded reel doesn’t load, use “Watch on Instagram” to open it
+          directly.
+        </p>
+      </section>
+      <section id="about" class="section about">
+        <div>
+          <div class="eyebrow">02 / The person behind the camera</div>
+          <h2>A perspective.<br />Not just a pitch.</h2>
+        </div>
+        <div>
+          <p>
+            I’m Aditya, a creator and computer science student based in
+            Dehradun. On @adi.reflections, I make perspective-driven stories
+            about everyday life.
+          </p>
+          <p>
+            My approach to brand content starts the same way: find something
+            people recognise, give them a reason to stay, and make the product
+            part of a story that makes sense.
+          </p>
+          <a
+            class="text-link"
+            href="https://www.instagram.com/adi.reflections/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Meet me on Instagram ↗</a
+          >
+        </div>
+      </section>
+      <section class="section">
+        <div class="eyebrow">03 / Ways to work together</div>
+        <h2>Your brief. My perspective.</h2>
+        <div class="services">
+          <div class="service">
+            <small>01</small>
+            <h3>UGC for your channels</h3>
+            <p>
+              Creator-led videos for your brand’s social channels, with a
+              natural delivery and a clear product story.
+            </p>
+          </div>
+          <div class="service">
+            <small>02</small>
+            <h3>Brand storytelling</h3>
+            <p>
+              Relatable scripts that connect your message to an everyday
+              observation, question or experience.
+            </p>
+          </div>
+          <div class="service">
+            <small>03</small>
+            <h3>Product demos & explainers</h3>
+            <p>
+              Show what your product does, why it matters and where it fits in
+              someone’s life.
+            </p>
+          </div>
+          <div class="service">
+            <small>04</small>
+            <h3>Instagram collaborations</h3>
+            <p>
+              Campaigns for @adi.reflections, shaped around the audience and the
+              idea. Deliverables agreed around your brief.
+            </p>
+          </div>
+        </div>
+        <div class="process">
+          <span>01 / Share the brief</span><span>02 / Align on the concept</span
+          ><span>03 / Create & review</span><span>04 / Deliver</span>
+        </div>
+      </section>
+      <section id="contact" class="footer">
+        <div class="eyebrow">Got something in mind?</div>
+        <h2>Let’s make it<br />worth watching.</h2>
+        <p>Share your brand, the idea and your timeline.</p>
+        <a
+          class="round-link"
+          href="https://www.instagram.com/adi.reflections/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Let’s talk on Instagram <span>↗</span></a
+        >
+        <div class="foot-bottom">
+          <span>ADITYA UNIYAL / UGC & BRAND STORYTELLING</span
+          ><span>DEHRADUN, INDIA · @ADI.REFLECTIONS</span>
+        </div>
+      </section>
+    </main>
+    <script>
+      document.querySelectorAll(".filter").forEach((button) =>
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".filter").forEach((b) => {
+            b.classList.toggle("active", b === button);
+            b.setAttribute("aria-pressed", String(b === button));
+          });
+          document
+            .querySelectorAll("[data-category]")
+            .forEach((card) =>
+              card.classList.toggle(
+                "hidden",
+                button.dataset.filter !== "all" &&
+                  card.dataset.category !== button.dataset.filter,
+              ),
+            );
+        }),
+      );
+    </script>
+  </body>
+</html>
